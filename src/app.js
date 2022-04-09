@@ -37,3 +37,21 @@ function addNoteArea() {
 
   createNoteArea.appendChild(noteTakingArea);
 }
+
+function readNote(el) {
+  const readNoteArea = document.querySelector('.read-note-area');
+  const note = notes.find(obj => {
+    return obj.title === el.textContent;
+  });
+  
+  const section = document.createElement('section');
+  const closeBtn = document.createElement('button');
+
+  section.innerHTML = '<pre>' + note.title + '\n' + note.noteBody + '</pre>';
+  
+  closeBtn.innerHTML = 'close';
+  closeBtn.addEventListener('click', (e) => {removeArea(e.target)});
+
+  section.appendChild(closeBtn);
+  readNoteArea.appendChild(section);
+}
