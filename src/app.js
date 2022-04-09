@@ -55,3 +55,7 @@ function readNote(el) {
   section.appendChild(closeBtn);
   readNoteArea.appendChild(section);
 }
+
+function removeArea(el) {
+  el.parentElement.remove();
+}
