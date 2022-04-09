@@ -134,3 +134,7 @@ footer p {
   color: var(--text);
   font-size: var(--lrg-txt);
 }
+
+button {
+  background-color: #e0def4;
+}

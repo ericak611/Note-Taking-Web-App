@@ -38,6 +38,30 @@ function addNoteArea() {
   createNoteArea.appendChild(noteTakingArea);
 }
 
+function addNote(el) {
+  // create new note with given title, body, id
+  const textarea = el.parentElement.firstChild;
+  const lines = textarea.value.split('\n');
+  
+  const newNote = {
+    title: lines[0],
+    noteBody: lines.slice(1).join('\n'),
+    id: notes.length + 1
+  };
+  notes.push(newNote);
+
+  // insert title into .notes-list
+  const notesList = document.querySelector('.notes-list');
+  const li = document.createElement('li');
+  
+  li.textContent = newNote.title;
+  li.addEventListener('click', (e) => {readNote(e.target)});
+  notesList.appendChild(li);
+
+  // remove note taking area
+  removeArea(el);
+}
+
 function readNote(el) {
   const readNoteArea = document.querySelector('.read-note-area');
   const note = notes.find(obj => {
