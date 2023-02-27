@@ -22,20 +22,6 @@
 
 [Font Awesome](https://www.flaticon.com/)
 
-you can search for icons at the link above.
 
-Example usage:
 
-```HTML
-<span class="icons"><i class="fa-solid fa-circle-plus"></i></span>
-```
 
-```CSS
-i {
-  font-size: 3rem;
-}
-
-.icons {
-  color: var(--text);
-}
-```
